@@ -1,5 +1,14 @@
-// @import url('');
-
-// body {
-// 	font-family: 'Open Sans', sans-serif;
-// }
+@font-face {
+	font-family: 'AdiHaus';
+	src: URL('https://assets.codepen.io/6060109/adihaus_regular.ttf')
+		format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'AdiHaus';
+	src: url('https://assets.codepen.io/6060109/adihaus_bold.ttf')
+		format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}

@@ -6,10 +6,6 @@
 *::after {
 	margin: 0;
 	padding: 0;
-	/* you don't want to have this one every element
-		we will use inherantace instead
-	*/
-	box-sizing: inherit;
 }
 
 html {
@@ -28,4 +24,6 @@ html {
 
 body {
 	box-sizing: border-box;
+	width: 100%;
+	height: 100vh;
 }

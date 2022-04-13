@@ -1,0 +1,33 @@
+@use './functions' as funct;
+@use 'sass:math';
+
+//  MEDIA QUERY MANAGER
+/*
+	// CONVERSION: 1em = 16px
+	0 = 600px;			$PHONE									--> 37.50em
+	600 - 900px;		$TAB-PORT								--> 56.25em
+	900 - 1200px;		$TAB-LAND								--> 75.00em
+	[1200 - 1800px] NORMAL STYLE IS APPLIED	--> DEFAULT
+	1800px - + 			$BIG-DESKTOP						--> 112.5em
+*/
+
+// ORDER OF WRITING MEDIA-QUERIES:
+// BASE + TYPOGRAPHY --> GENERAL LAYOUT --> GRID --> PAGE LAYOUT --> COMPONENTS
+
+$sm-phone: 400px;
+$phone: 600px;
+$tab-port: 900px;
+$tab-land: 1200px;
+$big-desktop: 1800px;
+
+@mixin respond($breakpoint) {
+	@if $breakpoint <=$tab-land {
+		@media (max-width: funct.em-converter($breakpoint)) {
+			@content;
+		}
+	} @else if $breakpoint >= $big-desktop {
+		@media (min-width: funct.em-converter($breakpoint)) {
+			@content;
+		}
+	}
+}
